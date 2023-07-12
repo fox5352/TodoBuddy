@@ -1,8 +1,8 @@
 import React from 'react'
 
-import styles from './css/NoteInput.module.css'
+import styles from './css/AddNote.module.css'
 
-export const NoteInput = () => {
+export const AddNote = () => {
   return (
     <div className={styles.form}>
        <input className={styles.input} type='text' spellCheck required />

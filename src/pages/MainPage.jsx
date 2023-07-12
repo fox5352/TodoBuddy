@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { NoteInput } from "../components";
+import { AddNote } from "../components";
 
 import styles from './css/MainPage.module.css'
 
 export const MainPage = () => {
   return (
     <>
-        <NoteInput />
+        <AddNote />
 
         <div className={styles.main}>
           <div className={styles.head}>
