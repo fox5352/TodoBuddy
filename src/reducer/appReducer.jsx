@@ -6,15 +6,15 @@ export const appReducer = (state, action) => {
         case "INCREMENT":
             return {
                 ...state,
-                todoListLen: payload.todoListLen
+                counter: payload.counter
             }
         case "DECREMENT":
             return {
                 ...state,
-                todoListLen: payload.todoListLen
+                counter: payload.counter
             }
-    
+            
         default:
-            break;
+            throw Error("method does not exist in appReducer")
     }
 }
