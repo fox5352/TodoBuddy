@@ -1,14 +1,21 @@
 import React from "react";
-// import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 //Components
-import { Header } from "../components";
+import { Header, Footer } from "../components";
+import { MainPage } from "./";
 
 function Applayout() {
 
     return(
-        <>
-        <Header />
-        </>
+        <React.Fragment>
+            <Header />
+                <main>
+                    <Routes>
+                        <Route path="/" element={<MainPage />} end/>
+                    </Routes>
+                </main>
+            <Footer />
+        </React.Fragment>
     )
 }
 

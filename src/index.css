@@ -1,0 +1,27 @@
+:root {
+    /* colors */
+    --header-color: #fff; 
+    --header-bg: #46b2b2;
+
+    --fg-color: #000;
+    --bg-color: #fff;
+    --accent-color: #a8d1d1;
+    /* fonts */
+    --header-font: Geneva, Tahoma;
+    --fg-font: 'Lucida Sans', 'Lucida Sans Regular';
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 65%;
+
+    margin: 0 auto;
+
+    font-family: var(--fg-font);
+    background-color: var(--bg-color);
+}

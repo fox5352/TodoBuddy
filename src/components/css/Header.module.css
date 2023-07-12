@@ -1,8 +1,57 @@
-
 .header {
+    display: flex;
+    justify-content: space-between;
 
+    /* padding: 0.5rem; */
+
+    margin: 1rem 0;
+
+    min-height: 60px;
+
+    border-radius: 8px;
+
+    color: var(--header-color);
+    background-color: var(--header-bg);
 }
 
 .title {
-    
+    align-items: center;
+
+    margin: 0.5rem;
+
+    cursor: pointer;
+
+    font-family: var(--header-font);
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+
+    color: var(--header-color);
+
+}
+
+.navControls {}
+
+.navBtn {
+    align-items: center;
+
+    width: 62px;
+    height: 100%;
+
+    font-size: 1.3rem;
+
+    color: var(--header-color);
+    background-color: var(--header-bg);
+
+    border: none;
+    border-left: 2px solid var(--header-color);
+}
+
+.navBtn:nth-last-child(1){
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.navBtn:hover {
+    background-color: var(--accent-color);
 }

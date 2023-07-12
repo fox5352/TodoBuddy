@@ -1,0 +1,37 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 6px;
+
+    border-radius: 8px;
+    border: 2px solid var(--header-bg);
+}
+
+.head {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 5px 12px;
+    margin: 0 9px;
+    
+    border: none;
+    border-bottom: 2px dashed var(--header-bg);
+}
+
+.btn {
+    min-width:  32px;
+
+    padding: 8px;
+
+    border: none;
+    border-radius: 6px;
+
+    color: var(--header-color);
+    background-color: var(--header-bg);
+}
+.btn:hover {
+    background-color: var(--accent-color);
+}

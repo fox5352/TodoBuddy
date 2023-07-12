@@ -1,0 +1,42 @@
+const { createContext, useContext, useReducer } = require("react")
+
+import { appReducer } from "../reducer/appReducer"
+
+const initialState = {
+    todoListLen: 0,
+    todoLists: []
+}
+
+const AppContext = createContext(initialState)
+
+export const AppProvider = ({children, ...props}) => {
+    const {state, dispatch} = useReducer(appReducer, initialState)
+
+    const increment = () => {
+        dispatch({
+            type: "INCREMENT",
+            todoListLen: state.todoListLen+1
+        })
+    }
+    const decrement = () =>  {
+        dispatch({
+            type: "DECREMENT",
+            todoListLen: state.todoListLen+1
+        })
+    }
+
+    const values = {
+        todoListLen: state.todoListLen,
+        todoLists: state.todoLists,
+        increment,
+        decrement,
+    }
+
+    return(
+        <AppContext.Provider value={values}>
+            {children}
+        </AppContext.Provider>
+    )
+}
+
+export const useApp = () => useContext(AppContext)

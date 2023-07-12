@@ -1,9 +1,16 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
+import styles from "./css/Header.module.css";
 
     export const Header = () => {
   return (
-    <header className='header'>
-        <h1 className='title'>Taskmate</h1>
+    <header className={styles.header}>
+        <Link to="/" className={styles.title}><i class='bi bi-sticky'></i> Taskmate</Link>
+
+        <dic className={styles.navControls}>
+          <button className={styles.navBtn}><i className='bi bi-sun'></i></button>
+        </dic>
     </header>
   )
 }
