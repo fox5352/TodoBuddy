@@ -12,6 +12,7 @@ const AppContext = createContext(initialState)
 export const AppProvider = ({children, ...props}) => {
     const [state, dispatch] = useReducer(appReducer, initialState)
 
+    // COUNTER METHODS
     const increment = () => {
         const newLen = state.counter + 1
         dispatch({
@@ -30,12 +31,43 @@ export const AppProvider = ({children, ...props}) => {
             }
         })
     }
+    // NOTES METHODS
+    const pushNote = (data) => {
+        const newList = state.todoLists.concat(data)
+        increment()
+        dispatch({
+            type: "ADD_TO_LIST",
+            payload: {
+                notes: newList
+            }
+        })
+    }
+    const removeNote = (data) => {
+        const newNotes = state.todoLists.filter(note=> note != data.id)
+        decrement()
+        dispatch({
+            type: "FILTER_LIST",
+            payload: {
+                notes: newNotes
+            }
+        })
+    }
+    const deleteNotes = () => {
+        dispatch({
+            type: "RESET_COUNTER"
+        })
+        dispatch({
+            type: "DELETE_LIST"
+        })
+    }
+
 
     const value = {
         counter: 0,
         todoLists: [],
-        increment,
-        decrement,
+        pushNote,
+        removeNote,
+        deleteNotes
     }
 
     return(
