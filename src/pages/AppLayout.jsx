@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { Routes, Route } from "react-router-dom";
 //Components
 import { Header, Footer } from "../components";
@@ -6,14 +6,20 @@ import { useApp } from "../context/AppContext";
 import { MainPage, NotePage } from "./";
 
 function Applayout() {
-    const { todoList, setCounter } = useApp()
+    const { counter, todoList, setCounter } = useApp()
 
-
+    const updateData = useCallback(
+      () => {
+        localStorage.setItem('tasklist', JSON.stringify(todoList))
+        counter === 0 && setCounter(todoList.length)
+      },
+      [counter, setCounter, todoList],
+    )
+    
 
     useEffect(()=>{
-        localStorage.setItem('tasklist', JSON.stringify(todoList))
-        setCounter(todoList.length)
-    }, [todoList])    
+        updateData()
+    }, [updateData])    
 
     return(
         <React.Fragment>

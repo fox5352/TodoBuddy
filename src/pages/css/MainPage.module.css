@@ -3,6 +3,7 @@
     flex-wrap: wrap;
 
     padding: 6px;
+    margin: 0 0 45px;
 
     border-radius: 8px;
     border: 2px solid var(--header-bg);
@@ -19,6 +20,8 @@
     
     border: none;
     border-bottom: 2px dashed var(--header-bg);
+
+    color: var(--fg-color);
 }
 .btn {
     min-width:  32px;

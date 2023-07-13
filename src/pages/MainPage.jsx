@@ -2,11 +2,13 @@ import React from 'react'
 
 import { AddNote, Note } from "../components";
 import { useApp } from "../context/AppContext";
+import { useTitle } from "../hooks";
 
 import styles from './css/MainPage.module.css'
 
 export const MainPage = () => {
   const { counter, todoList, deleteNotes } = useApp()
+  useTitle('Home')
 
   const mapper = (item) => {
     const {id, note, date} = item

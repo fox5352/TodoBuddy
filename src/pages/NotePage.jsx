@@ -4,11 +4,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 
 import styles from './css/NotePage.module.css'
+import { useTitle } from '../hooks';
 
 export const NotePage = () => {
     const params = useParams()
     const redirect = useNavigate()
     const { todoList, removeNote } = useApp()
+    useTitle('Note')
     let list;
 
     todoList.forEach(note => {

@@ -3,16 +3,20 @@
     display: flex;
     justify-content: space-between;
 
+    cursor: pointer;
     width: 230px;
 
     padding: 2px 6px;
     margin: 5px 4px;
 
     border-radius: 6px;
-    border-width: 5px;
-    border-left: solid var(--header-bg);
-    border-right: solid var(--header-bg);
-    box-shadow: 0px 1px gray, 0 -1px gray;
+    border: 2px solid var(--header-bg);
+    border-left: 5px solid var(--header-bg);
+    border-right: 5px solid var(--header-bg);
+}
+.body:hover {
+    border-left: 5px solid var(--accent-color);
+    border-right: 5px solid var(--accent-color);
 }
 
 .head {

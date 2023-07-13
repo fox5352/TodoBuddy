@@ -1,4 +1,4 @@
-:root {
+:root[data-theme="light"] {
     /* colors */
     --header-color: #fff; 
     --header-bg: #fc7373;
@@ -6,6 +6,20 @@
     --fg-color: #000;
     --bg-color: #fff;
     --accent-color: #a8d1d1;
+    /* fonts */
+    --header-font: Geneva, Tahoma;
+    --fg-font: 'Lucida Sans', 'Lucida Sans Regular';
+}
+:root[data-theme="dark"] {
+    /* colors */
+    --header-color: #fff; 
+    --header-bg: #b65353;
+
+    /* color: dimgray; */
+
+    --fg-color: #fff;
+    --bg-color: rgb(59, 55, 55);
+    --accent-color: #8aacac;
     /* fonts */
     --header-font: Geneva, Tahoma;
     --fg-font: 'Lucida Sans', 'Lucida Sans Regular';
@@ -23,5 +37,7 @@ body {
     margin: 0 auto;
 
     font-family: var(--fg-font);
+
+    color: var(--fg-color);
     background-color: var(--bg-color);
 }
