@@ -22,17 +22,17 @@ export const appReducer = (state, action) => {
         case "ADD_TO_LIST":
             return {
                 ...state,
-                todoLists: payload.notes
+                todoList: payload.notes
             }
         case "FILTER_LIST":
             return {
                 ...state,
-                todoLists: payload.notes
+                todoList: payload.notes
             }
         case "DELETE_LIST":
             return {
                 ...state,
-                todoLists: []
+                todoList: []
             }
             
         default:

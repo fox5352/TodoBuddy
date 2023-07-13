@@ -4,7 +4,7 @@ import { appReducer } from "../reducer/appReducer"
 
 const initialState = {
     counter: 0,
-    todoLists: []
+    todoList: []
 }
 
 const AppContext = createContext(initialState)
@@ -33,14 +33,15 @@ export const AppProvider = ({children, ...props}) => {
     }
     // NOTES METHODS
     const pushNote = (data) => {
-        const newList = state.todoLists.concat(data)
+        const newList = state.todoList.concat(data)
         increment()
-        dispatch({
-            type: "ADD_TO_LIST",
-            payload: {
-                notes: newList
-            }
-        })
+        console.log(newList);
+        // dispatch({
+        //     type: "ADD_TO_LIST",
+        //     payload: {
+        //         notes: newList
+        //     }
+        // })
     }
     const removeNote = (data) => {
         const newNotes = state.todoLists.filter(note=> note != data.id)
@@ -63,8 +64,8 @@ export const AppProvider = ({children, ...props}) => {
 
 
     const value = {
-        counter: 0,
-        todoLists: [],
+        counter: state.counter,
+        todoList: [],
         pushNote,
         removeNote,
         deleteNotes

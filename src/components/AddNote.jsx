@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useApp } from "../context/AppContext";
 
@@ -6,7 +6,7 @@ import styles from './css/AddNote.module.css'
 
 export const AddNote = () => {
   const [note, setNote] = useState('')
-  const {} = useApp()
+  const { pushNote } = useApp()
 
   const handelNote = (e) => {
     const newNote = e.target.value
@@ -16,14 +16,11 @@ export const AddNote = () => {
   const submitNote = (e) => {
     const newID = `${Math.round(Math.random()*900)}${Math.round(Math.random()*900)}`
     const date = new Date()
+    const newNote = { id: newID, note: note, date: date.toDateString() }
 
-    const newNote = {
-      id: newID,
-      note: note,
-      date: date.toDateString()
-    }
-
-    console.log(newNote);
+    pushNote(newNote)
+    
+    setNote('')
     e.preventDefault()
   }
 
