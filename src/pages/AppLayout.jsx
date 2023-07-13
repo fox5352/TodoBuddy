@@ -6,10 +6,13 @@ import { useApp } from "../context/AppContext";
 import { MainPage, NotePage } from "./";
 
 function Applayout() {
-    const { todoList } = useApp()
+    const { todoList, setCounter } = useApp()
+
+
 
     useEffect(()=>{
         localStorage.setItem('tasklist', JSON.stringify(todoList))
+        setCounter(todoList.length)
     }, [todoList])    
 
     return(

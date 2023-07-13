@@ -13,6 +13,11 @@ export const appReducer = (state, action) => {
                 ...state,
                 counter: payload.counter
             }
+        case "SET_COUNTER":
+            return{
+                ...state,
+                counter: payload.counter
+            }
         case "RESET_COUNTER":
             return {
                 ...state,

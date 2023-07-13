@@ -22,7 +22,7 @@ export const AppProvider = ({children, ...props}) => {
             }
         })
     }
-    const decrement = () =>  {
+    const decrement = () => {
         const newLen = state.counter - 1
         dispatch({
             type: "DECREMENT",
@@ -31,6 +31,15 @@ export const AppProvider = ({children, ...props}) => {
             }
         })
     }
+    const setCounter = (num) => {
+        dispatch({
+            type: "SET_COUNTER",
+            payload: {
+                counter:num
+            }
+        })
+    }
+    
     // NOTES METHODS
     const pushNote = (data) => {
         const newList = state.todoList.concat(data)
@@ -74,6 +83,7 @@ export const AppProvider = ({children, ...props}) => {
     const value = {
         counter: state.counter,
         todoList: state.todoList,
+        setCounter,
         pushNote,
         removeNote,
         deleteNotes,
