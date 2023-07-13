@@ -4,7 +4,7 @@ import { appReducer } from "../reducer/appReducer"
 
 const initialState = {
     counter: 0,
-    todoList: []
+    todoList: JSON.parse(localStorage.getItem('tasklist')) || []
 }
 
 const AppContext = createContext(initialState)

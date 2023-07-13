@@ -3,23 +3,14 @@ import { Routes, Route } from "react-router-dom";
 //Components
 import { Header, Footer } from "../components";
 import { useApp } from "../context/AppContext";
-import { MainPage } from "./";
+import { MainPage, NotePage } from "./";
 
 function Applayout() {
-    const { todoList, setNotes } = useApp()
-
-    useEffect(()=>{
-        const NoteList = JSON.parse(localStorage.getItem('tasklist')) || []
-        setNotes(NoteList)
-    }, [])
+    const { todoList } = useApp()
 
     useEffect(()=>{
         localStorage.setItem('tasklist', JSON.stringify(todoList))
-    }, [todoList])
-
-
-    
-    
+    }, [todoList])    
 
     return(
         <React.Fragment>
@@ -27,6 +18,7 @@ function Applayout() {
                 <main>
                     <Routes>
                         <Route path="/" element={<MainPage />} end/>
+                        <Route path="/:id" element={<NotePage />} end/>
                     </Routes>
                 </main>
             <Footer />
