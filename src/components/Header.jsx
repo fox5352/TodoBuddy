@@ -9,7 +9,8 @@ import styles from "./css/Header.module.css";
         <Link to="/" className={styles.title}><i class='bi bi-sticky'></i> Taskmate</Link>
 
         <dic className={styles.navControls}>
-          <button className={styles.navBtn}><i className='bi bi-sun'></i></button>
+          <button className={styles.navBtn} disabled><i className='bi bi-sun'></i></button>
+          <button className={styles.navBtn}><i className='bi bi-github'></i></button>
         </dic>
     </header>
   )

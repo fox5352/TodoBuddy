@@ -43,17 +43,15 @@
 
     border: none;
     border-radius: 0 6px 6px 0;
-    border-left: 2px dashed var(--header-bg);
 
     font-size: 1.2rem;
+    
+    border: 1px solid var(--header-color);
 
-    color: var(--fg-color);
-    background-color: var(--bg-color);
+    color: var(--header-color);
+    background-color: var(--header-bg);
 }
 
 .btn:hover {
-    border: 1px solid var(--header-color);
-    border-left-style: dashed;
-    color: var(--header-color);
-    background-color: var(--header-bg);
+    background-color: var(--accent-color);
 }

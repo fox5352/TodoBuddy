@@ -50,5 +50,5 @@
     background-color: rgb(244, 23, 67);
 }
 .btn:hover {
-    background-color: crimson;
+    background-color: var(--accent-color);
 }

@@ -35,8 +35,10 @@
 .navBtn {
     align-items: center;
 
-    width: 62px;
+    min-width: 62px;
     height: 100%;
+
+    padding: 2px 5px;
 
     font-size: 1.3rem;
 
