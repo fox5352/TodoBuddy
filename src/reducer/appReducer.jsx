@@ -34,6 +34,11 @@ export const appReducer = (state, action) => {
                 ...state,
                 todoList: []
             }
+        case "SET_NOTES":
+            return {
+                ...state,
+                todoList: payload.notes
+            }
             
         default:
             throw Error("method does not exist in appReducer")

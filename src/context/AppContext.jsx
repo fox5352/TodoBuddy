@@ -35,16 +35,16 @@ export const AppProvider = ({children, ...props}) => {
     const pushNote = (data) => {
         const newList = state.todoList.concat(data)
         increment()
-        console.log(newList);
-        // dispatch({
-        //     type: "ADD_TO_LIST",
-        //     payload: {
-        //         notes: newList
-        //     }
-        // })
+        dispatch({
+            type: "ADD_TO_LIST",
+            payload: {
+                notes: newList
+            }
+        })
     }
     const removeNote = (data) => {
-        const newNotes = state.todoLists.filter(note=> note != data.id)
+        const list = state.todoList
+        const newNotes = list.filter(note=> note.id !== data.id)
         decrement()
         dispatch({
             type: "FILTER_LIST",
@@ -61,14 +61,23 @@ export const AppProvider = ({children, ...props}) => {
             type: "DELETE_LIST"
         })
     }
+    const setNotes = (data) => {
+        dispatch({
+            type: "SET_NOTES",
+            payload:{
+                notes: data
+            }
+        })
+    }
 
 
     const value = {
         counter: state.counter,
-        todoList: [],
+        todoList: state.todoList,
         pushNote,
         removeNote,
-        deleteNotes
+        deleteNotes,
+        setNotes
     }
 
     return(

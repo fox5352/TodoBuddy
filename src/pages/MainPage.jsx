@@ -1,12 +1,17 @@
 import React from 'react'
 
-import { AddNote } from "../components";
+import { AddNote, Note } from "../components";
 import { useApp } from "../context/AppContext";
 
 import styles from './css/MainPage.module.css'
 
 export const MainPage = () => {
-  const { counter } = useApp()
+  const { counter, todoList, deleteNotes } = useApp()
+
+  const mapper = (item) => {
+    const {id, note, date} = item
+    return <Note key={id} id={id} note={note} date={date} />
+  }
 
   return (
     <>
@@ -15,9 +20,11 @@ export const MainPage = () => {
         <div className={styles.main}>
           <div className={styles.head}>
             <h2>Todo <i>{counter}</i></h2>
-            <button className={styles.btn}>Clear All</button>
+            <button onClick={deleteNotes} className={styles.btn}>Clear All</button>
           </div>
-          {/* TODO:note component */}
+          <div className={styles.body}>
+            {todoList && todoList.map(mapper)}
+          </div>
         </div>
     </>
   )
