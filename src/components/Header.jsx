@@ -10,7 +10,7 @@ import styles from "./css/Header.module.css";
 
   return (
     <header className={styles.header}>
-        <Link to="/" className={styles.title}><i class='bi bi-sticky'></i> Taskmate</Link>
+        <Link to="/" className={styles.title}><i class='bi bi-sticky'></i> TodoBuddy</Link>
 
         <dic className={styles.navControls}>
           <button onClick={toggleTheme} className={styles.navBtn}><i className='bi bi-sun'></i></button>

@@ -23,14 +23,12 @@ export const Footer = () => {
       <div className={styles.body}>
         <h3>Contact Me</h3>
         <div className={styles.block}>
-          {/* TODO: ADD LINKS! */}
           <a className={styles.link} href='https://fox5352.github.io/online-cv'>online cv</a>
-          <a className={styles.link} href='/'>LinkedIn</a>
+          <a className={styles.link} href='https://www.linkedin.com/in/christopher-vos-376910266'>LinkedIn</a>
         </div>
         <h3>Projects</h3>
         <div className={styles.block}>
-          <a className={styles.link} href='/'>Simon Game</a>
-          {/* verify */}
+          <a className={styles.link} href='https://fox5352.github.io/simon-game'>Simon Game</a>
           <a className={styles.link} href='https://52.201.225.92:3000'>Todo List</a>
         </div>
       </div>
