@@ -1,9 +1,21 @@
+.trigger {
+    height: 15px;
+    width: 20px;
+    margin: 50px auto;
+}
 .footer {
     position: fixed;
     bottom: 0;
     left: 0;
     
     width: 100%;
+
+    transform: translateY( 110%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.active {
+    transform: translateY( 0);
 }
 
 .body{
@@ -18,8 +30,6 @@
     border-radius: 8px 8px 0 0;
     
     background-color: var(--header-bg);
-
-    transform: translateY( 100%);
 }
 .body h3 {
     display: flex;

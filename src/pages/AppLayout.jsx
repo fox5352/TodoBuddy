@@ -8,8 +8,7 @@ import { MainPage, NotePage } from "./";
 function Applayout() {
     const { counter, todoList, setCounter } = useApp()
 
-    const updateData = useCallback(
-      () => {
+    const updateData = useCallback(() => {
         localStorage.setItem('tasklist', JSON.stringify(todoList))
         counter === 0 && setCounter(todoList.length)
       },
