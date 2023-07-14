@@ -3,8 +3,6 @@ import { useApp } from "../context/AppContext";
 
 import styles from "./css/Footer.module.css";
 
-// TODO: added a banner in the footer
-
 export const Footer = () => {
   const { todoList } = useApp()
   const [trigger, setTrigger] = useState(false)
