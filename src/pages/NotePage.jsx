@@ -24,7 +24,6 @@ export const NotePage = () => {
     }
 
     const deleteNote = () => {
-        console.log(list);
         removeNote(list)
         redirect('/')
     }

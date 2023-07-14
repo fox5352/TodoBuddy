@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
     
 import { appReducer } from "../reducer/appReducer"
 
@@ -12,38 +12,13 @@ const AppContext = createContext(initialState)
 export const AppProvider = ({children, ...props}) => {
     const [state, dispatch] = useReducer(appReducer, initialState)
 
-    // COUNTER METHODS
-    const increment = () => {
-        const newLen = state.counter + 1
-        dispatch({
-            type: "INCREMENT",
-            payload: {
-                counter: newLen
-            }
-        })
-    }
-    const decrement = () => {
-        const newLen = state.counter - 1
-        dispatch({
-            type: "DECREMENT",
-            payload: {
-                counter: newLen
-            }
-        })
-    }
-    const setCounter = (num) => {
-        dispatch({
-            type: "SET_COUNTER",
-            payload: {
-                counter:num
-            }
-        })
-    }
-    
+    useEffect(()=>{
+        localStorage.setItem('tasklist', JSON.stringify(state.todoList))
+    }, [state.todoList])
+
     // NOTES METHODS
     const pushNote = (data) => {
         const newList = state.todoList.concat(data)
-        increment()
         dispatch({
             type: "ADD_TO_LIST",
             payload: {
@@ -54,7 +29,6 @@ export const AppProvider = ({children, ...props}) => {
     const removeNote = (data) => {
         const list = state.todoList
         const newNotes = list.filter(note=> note.id !== data.id)
-        decrement()
         dispatch({
             type: "FILTER_LIST",
             payload: {
@@ -63,9 +37,6 @@ export const AppProvider = ({children, ...props}) => {
         })
     }
     const deleteNotes = () => {
-        dispatch({
-            type: "RESET_COUNTER"
-        })
         dispatch({
             type: "DELETE_LIST"
         })
@@ -81,9 +52,8 @@ export const AppProvider = ({children, ...props}) => {
 
 
     const value = {
-        counter: state.counter,
+        counter: state.todoList.length,
         todoList: state.todoList,
-        setCounter,
         pushNote,
         removeNote,
         deleteNotes,
