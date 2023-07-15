@@ -1,12 +1,15 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-import { useApp } from "../context/AppContext";
+// import { useApp } from "../context/AppContext";
+// redux  reducer
+import { useDispatch } from "react-redux";
+import { removeNote } from "../store/appSlice";
 
 import styles from './css/Note.module.css'
 
 export const Note = ({id, note, date, ...props}) => {
-    const { removeNote } = useApp()
+    const dispatch = useDispatch()
     const redirect = useNavigate()
     const values = {id:id, note:note, date:date}
     
@@ -19,7 +22,7 @@ export const Note = ({id, note, date, ...props}) => {
     }
 
     const removeHandler = (e) => {
-        removeNote(values)
+        dispatch(removeNote(values))
         e.stopPropagation() 
     }
 

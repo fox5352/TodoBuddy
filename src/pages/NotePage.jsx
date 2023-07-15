@@ -1,15 +1,21 @@
 import React from 'react'
 import { useParams, useNavigate } from "react-router-dom";
 
-import { useApp } from "../context/AppContext";
+
+// redux reducer
+import { useDispatch, useSelector } from "react-redux";
+import { removeNote } from "../store/appSlice";
+
+
 
 import styles from './css/NotePage.module.css'
 import { useTitle } from '../hooks';
 
 export const NotePage = () => {
-    const params = useParams()
+    const { todoList } = useSelector(state=> state.appState)
     const redirect = useNavigate()
-    const { todoList, removeNote } = useApp()
+    const dispatch = useDispatch()
+    const params = useParams()
     useTitle('Note')
     let list;
 
@@ -24,7 +30,7 @@ export const NotePage = () => {
     }
 
     const deleteNote = () => {
-        removeNote(list)
+        dispatch(removeNote(list))
         redirect('/')
     }
 

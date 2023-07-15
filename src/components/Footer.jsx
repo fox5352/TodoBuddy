@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { useApp } from "../context/AppContext";
 
 import styles from "./css/Footer.module.css";
 
 export const Footer = () => {
-  const { todoList } = useApp()
   const [trigger, setTrigger] = useState(false)
 
   useEffect(()=>{
     const trigger = document.getElementsByClassName('trigger')[0].getBoundingClientRect().bottom
     window.innerHeight > trigger? setTrigger(true) : setTrigger(false)
-  }, [trigger, setTrigger, todoList])
+  }, [trigger, setTrigger])
 
   window.addEventListener('scroll' ,()=>{
     const trigger = document.getElementsByClassName('trigger')[0].getBoundingClientRect().bottom

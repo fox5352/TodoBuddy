@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
-import { useApp } from "../context/AppContext";
+// redux state
+import { useDispatch } from "react-redux";
+import { addNote } from "../store/appSlice";
 
 import styles from './css/AddNote.module.css'
 
 export const AddNote = () => {
   const [note, setNote] = useState('')
-  const { pushNote } = useApp()
+  const dispatch = useDispatch()
 
   const handelNote = (e) => {
     const newNote = e.target.value
@@ -18,7 +20,7 @@ export const AddNote = () => {
     const date = new Date()
     const newNote = { id: newID, note: note, date: date.toDateString() }
 
-    pushNote(newNote)
+    dispatch(addNote(newNote))
     
     setNote('')
     e.preventDefault()

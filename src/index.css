@@ -41,3 +41,5 @@ body {
     color: var(--fg-color);
     background-color: var(--bg-color);
 }
+
+/* TODO:make page responsive 860px */

@@ -3,17 +3,20 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 //local imports 
 import AppLayout from './pages/AppLayout';
-import { AppProvider } from "./context/AppContext";
+// redux provider and store
+import { Provider } from "react-redux";
+import store from "./store/store";
+
 
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 
 function App() {
 
     return (
-        <Router>  
-            <AppProvider>
+        <Router>
+            <Provider store={store}>
                 <AppLayout />
-            </AppProvider>
+            </Provider>
         </Router>
     );
 }
