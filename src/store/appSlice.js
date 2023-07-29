@@ -5,7 +5,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const appSlice = createSlice({
     name: 'App',
     initialState: {
-        counter: JSON.parse(localStorage.getItem('tasklist')).length|| 0,
+        counter: 0,
         todoList: JSON.parse(localStorage.getItem('tasklist')) || []
     },
     reducers: {
