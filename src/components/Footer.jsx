@@ -22,7 +22,7 @@ export const Footer = () => {
         <h3>Contact Me</h3>
         <div className={styles.block}>
           <a className={styles.link} href='https://fox5352.github.io/online-cv'>online cv</a>
-          <a className={styles.link} href='https://www.linkedin.com/in/christopher-vos-376910266'>LinkedIn</a>
+          <a className={styles.link} href='https://www.linkedin.com/in/christopher-vos-6469b7284'>LinkedIn</a>
         </div>
         <h3>Projects</h3>
         <div className={styles.block}>
