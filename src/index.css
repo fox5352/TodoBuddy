@@ -43,3 +43,10 @@ body {
 }
 
 /* TODO:make page responsive 860px */
+
+@media only screen and (max-width: 600px) {
+    body {
+        width: 90%;
+        padding: 0 8px;
+    }
+}

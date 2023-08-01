@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
+console.log();
 // cerate app slice
 const appSlice = createSlice({
     name: 'App',
     initialState: {
-        counter: 0,
+        counter: (JSON.parse(localStorage.getItem('tasklist')) || []).length,
         todoList: JSON.parse(localStorage.getItem('tasklist')) || []
     },
     reducers: {

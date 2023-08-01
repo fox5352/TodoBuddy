@@ -57,3 +57,9 @@
 .navBtn:hover {
     background-color: var(--accent-color);
 }
+
+@media only screen and (max-width: 600px)  {
+    .heading {
+        display: none;
+    }
+}

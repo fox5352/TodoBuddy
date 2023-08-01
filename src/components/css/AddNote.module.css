@@ -1,7 +1,7 @@
 .form {
     display: flex;
     
-    width: 470px;
+    width: 50vw;
 
     padding: 1rem;
     margin: 3rem auto;
@@ -15,6 +15,7 @@
     flex-grow: 1;
 
     height: 34px;
+    width: 100%;
 
     padding: 2px;
 
@@ -55,4 +56,10 @@
 
 .btn:hover {
     background-color: var(--accent-color);
+}
+
+@media only screen and (max-width: 600px) {
+    .form {
+        width: 100%;
+    }
 }
