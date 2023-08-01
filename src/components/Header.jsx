@@ -1,12 +1,17 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useTheme } from "../hooks";
 
 import styles from "./css/Header.module.css";
 
-    export const Header = () => {
-      const { toggleTheme } = useTheme()
+export const Header = () => {
+    const { toggleTheme } = useTheme()
+    const link = useNavigate()
+
+    const redirect = () => {
+      link('https://github.com/fox5352')
+    }
 
   return (
     <header className={styles.header}>
@@ -14,7 +19,7 @@ import styles from "./css/Header.module.css";
 
         <dic className={styles.navControls}>
           <button onClick={toggleTheme} className={styles.navBtn}><i className='bi bi-sun'></i></button>
-          <button className={styles.navBtn}><i className='bi bi-github'></i></button>
+          <a href='https://github.com/fox5352'><button className={styles.navBtn}><i className='bi bi-github'></i></button></a>
         </dic>
     </header>
   )
