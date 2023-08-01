@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { useTheme } from "../hooks";
 
@@ -7,11 +7,6 @@ import styles from "./css/Header.module.css";
 
 export const Header = () => {
     const { toggleTheme } = useTheme()
-    const link = useNavigate()
-
-    const redirect = () => {
-      link('https://github.com/fox5352')
-    }
 
   return (
     <header className={styles.header}>
