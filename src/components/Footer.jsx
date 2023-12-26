@@ -3,17 +3,26 @@ import React, { useEffect, useState } from 'react';
 import styles from "./css/Footer.module.css";
 
 export const Footer = () => {
-  const [trigger, setTrigger] = useState(false);
+  const [trigger, setTrigger] = useState(true);
 
-  useEffect(() => {
-    const trigger = document.getElementsByClassName('trigger')[0].getBoundingClientRect().bottom;
-    window.innerHeight > trigger ? setTrigger(true) : setTrigger(false);
-  }, [trigger, setTrigger]);
+  useEffect(()=>{
+    document.addEventListener("scroll", triggerManager);
+    triggerManager()
+    return ()=>{
+     document.removeEventListener("scroll", triggerManager);
+    }
+  },[])
 
-  window.addEventListener('scroll', () => {
-    const trigger = document.getElementsByClassName('trigger')[0].getBoundingClientRect().bottom;
-    window.innerHeight > trigger ? setTrigger(true) : setTrigger(false);
-  });
+  const triggerManager = ()=>{
+    const triggerBottom = document.querySelector('.trigger').getBoundingClientRect().bottom;
+    const screenBottom = window.innerHeight;
+    if (triggerBottom < screenBottom) {
+      setTrigger(true);
+    }else{
+      setTrigger(false)
+    }
+  }
+
 
   return (
     <footer className={`trigger ${styles.trigger}`} >

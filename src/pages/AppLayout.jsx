@@ -1,14 +1,14 @@
 
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-//Components
+//Components 
 import { Header, Footer } from "../components";
 import { MainPage, NotePage } from "./";
 
 function Applayout() {
 
     return(
-        <React.Fragment>
+        <>
             <Header />
                 <main>
                     <Routes>
@@ -17,7 +17,7 @@ function Applayout() {
                     </Routes>
                 </main>
             <Footer />
-        </React.Fragment>
+        </>
     )
 }
 
