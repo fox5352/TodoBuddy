@@ -1,0 +1,9 @@
+{
+  "name": "TodoBuddy",
+  "short_name": "TB",
+  "description": "A simple todo list app powered by react",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#a8d1d1"
+}
